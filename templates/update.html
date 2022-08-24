@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%block title %}Login {% endblock %}
+
+{%block content%}
+
+<form method="POST">
+  <div class="mb-3 form-check">
+
+    <h2>Edit Form</h2>
+  </div>
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    <label for="website" class="form-label">website name</label>
+    {{ form.website(class_="form-control",value=formData.website) }}
+  </div>
+
+  <div class="mb-3">
+    <label for="username" class="form-label">username</label>
+    {{ form.username(class_="form-control",value=formData.username) }}
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    {{ form.password(class_="form-control", value=formData.password)}}
+  </div>
+  <div class="mb-3 form-check">
+    <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a>
+  </div>
+  {{ form.submit(class_="btn btn-primary",value="save") }}
+</form>
+
+{% endblock %}
